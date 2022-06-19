@@ -1,0 +1,113 @@
+/* General Rules */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #2f2f2f;
+}
+
+/* Main Scene */
+.scene {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border: 20px solid #ffffff;
+    border-radius: 50%;
+    background-color: #3b93ff;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3) inset;
+    animation: scene-animation 5s linear infinite;
+}
+
+/* Scene Shadow */
+.scene::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Rocket */
+.fa-rocket {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 10rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: rocket-animation 0.4s linear infinite;
+    z-index: 1;
+}
+
+/* Clouds */
+.fa-cloud {
+    position: absolute;
+    color: #cccccc;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: cloud-animation 1s linear infinite;
+}
+
+.fa-cloud:nth-child(2) {
+    left: 10%;
+    font-size: 6rem;
+    animation-delay: 0s;
+}
+
+.fa-cloud:nth-child(3) {
+    right: 20%;
+    font-size: 5rem;
+    animation-delay: -0.4s;
+}
+
+.fa-cloud:nth-child(4) {
+    right: 45%;
+    font-size: 3rem;
+    animation-delay: -0.8s;
+}
+
+/* Animation */
+@keyframes rocket-animation {
+    0% {
+        transform: translate(-50%, -50%) rotate(-45deg) translate(0, 0);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-45deg) translate(-10px, 10px);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-45deg) translate(0, 0);
+    }
+}
+
+@keyframes cloud-animation {
+    0% {
+        transform: translate(0, -100%);
+    }
+    100% {
+        transform: translate(0, 1000%);
+    }
+}
+
+@keyframes scene-animation {
+    0% {
+        background-color: #3b93ff;
+    }
+    25% {
+        background-color: #3b39ff;
+    }
+    50% {
+        background-color: #b339ff;
+    }
+    75% {
+        background-color: #3b39ff;
+    }
+    100% {
+        background-color: #3b93ff;
+    }
+}
