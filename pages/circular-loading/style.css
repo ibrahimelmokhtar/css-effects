@@ -1,0 +1,84 @@
+/* General Rules */
+:root {
+    --angle: 18deg;     /* Angle of the arc */
+    --direction: 1;     /* 1 = clockwise, -1 = counterclockwise */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #111111;
+}
+
+/* Center Spinner Horizontally and Vertically */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Spinner Container */
+.spinner {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Single Spinning Dot Container */
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(calc(var(--i) * var(--angle)));
+    width: 100%;
+    height: 100%;
+    animation: color 10s linear infinite;
+}
+
+/* Actual Spinning Dot */
+.circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #00ff00;
+    box-shadow:
+            0 0 10px #00ff00,
+            0 0 20px #00ff00,
+            0 0 40px #00ff00,
+            0 0 60px #00ff00,
+            0 0 80px #00ff00,
+            0 0 100px #00ff00,
+            0 0 200px #00ff00;
+    animation: size-and-spin 2s linear infinite;
+    animation-delay: calc(var(--direction) * 0.1s * var(--i));
+}
+
+/* Animation */
+@keyframes color {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes size-and-spin {
+    0% {
+        transform: scale(1);
+    }
+    80%, 100% {
+        transform: scale(0);
+    }
+}
