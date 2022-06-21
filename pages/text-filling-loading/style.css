@@ -18,7 +18,8 @@ body {
 
 /* Displayed Text */
 .text {
-    font-size: 8rem;
+    cursor: default;
+    font-size: 5rem;
     line-height: 1.6em;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -41,7 +42,7 @@ body {
     overflow: hidden;
     color: #03a9f4;
     border-bottom: 16px solid #03a9f4;
-    animation: fill 8s linear infinite;
+    animation: fill 6s linear infinite;
 }
 
 /* Animation */
