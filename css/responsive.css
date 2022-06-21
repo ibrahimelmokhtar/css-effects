@@ -1,0 +1,41 @@
+/* xs: for phones */
+@media only screen and (max-width: 768px) {
+    /* Main Header */
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Main Categories */
+    main {
+        padding: 15px;
+    }
+
+    .category {
+        margin-bottom: 15px;
+    }
+
+    .category h2 {
+        margin: 0 0 5px;
+        padding: 20px 10px;
+        font-size: 1.2rem;
+    }
+
+    /* Projects Container */
+    .category section {
+        padding: 0;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: minmax(250px, auto);
+    }
+}
+
+/* sm: for tablets */
+@media only screen and (min-width: 768px) {
+}
+
+/* md: for small laptops */
+@media only screen and (min-width: 992px) {
+}
+
+/* lg: for laptops and desktops */
+@media only screen and (min-width: 1200px) {
+}
