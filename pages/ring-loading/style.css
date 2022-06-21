@@ -1,0 +1,65 @@
+/* General Rules */
+:root {
+    --size: 200px;
+    --direction: 1;     /* 1 = clockwise, -1 = counterclockwise */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    height: 100vh;
+    background: #ffffff;
+}
+
+/* Center Spinner Horizontally and Vertically */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Spinner Container */
+.spinner {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    box-shadow: 0 4px 0 #262626;
+    background-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+/* Inner Text */
+.text {
+    cursor: default;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: #262626;
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text::selection {
+    background-color: transparent;
+}
+
+/* Animation */
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(calc(var(--direction) * 360deg));
+    }
+}
