@@ -1,0 +1,79 @@
+/* General Rules */
+:root {
+    --speed: 4s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: #262626;
+}
+
+/* Center Horizontally and Vertically */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Displayed Clock */
+.clock {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #ff5f5f;
+    border-radius: 50%;
+    background-image: url(clock-background.png);
+    background-size: cover;
+    background-color: #ffffff;
+    background-position: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Common Rules Between Tallest and Shortest Lines */
+.clock::before,
+.clock::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0, -50%);
+    height: 6px;
+    background-color: #262626;
+    border-radius: 3px;
+    transform-origin: left;
+}
+
+/* Tallest Line */
+.clock::before {
+    width: 40%;
+    animation: rotate var(--speed) linear infinite;
+}
+
+/* Shortest Line */
+.clock::after {
+    width: 30%;
+    animation: rotate calc(var(--speed) * 12) linear infinite;
+}
+
+/* Clock Center Pivot */
+.pivot {
+    width: 10px;
+    height: 10px;
+    background-color: #ff5f5f;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Animation */
+@keyframes rotate {
+    0% {
+        transform: translate(0, -50%) rotate(-90deg);
+    }
+    100% {
+        transform: translate(0, -50%) rotate(270deg);
+    }
+}
