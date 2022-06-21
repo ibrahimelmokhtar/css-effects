@@ -1,0 +1,55 @@
+/* General Rules */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    background: #000000;
+    font-family: sans-serif;
+}
+
+/* Center Horizontally and Vertically */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Displayed Text */
+.text {
+    font-size: 8rem;
+    line-height: 1.6em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #222222;
+    border-bottom: 16px solid #222222;
+}
+
+.text::selection {
+    background-color: transparent;
+}
+
+/* Animated Text */
+.text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    color: #03a9f4;
+    border-bottom: 16px solid #03a9f4;
+    animation: fill 8s linear infinite;
+}
+
+/* Animation */
+@keyframes fill {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
