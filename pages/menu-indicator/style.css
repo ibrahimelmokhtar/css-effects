@@ -1,0 +1,118 @@
+/* General Rules */
+:root {
+    --width: 70px;
+    --elements: 5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #333333;
+    font-family: sans-serif;
+    transition: all 0.5s;
+}
+
+/* Center Horizontally and Vertically */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Navigation Container */
+.navigation {
+    position: relative;
+    width: calc(var(--width));
+    height: calc(var(--elements) * var(--width));
+    background-color: #ffffff;
+    border-radius: calc(var(--width)/ 2);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* List Item */
+.list__item {
+    position: relative;
+}
+
+.list__item a {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+    z-index: 1;
+}
+
+
+/* Circular Indicator Around Icon */
+.indicator {
+    width: var(--width);
+    height: var(--width);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: all 0.5s;
+    border: 1px solid;
+}
+
+/* Icon */
+.icon {
+    font-size: 24pt;
+    transition: all 0.5s;
+}
+
+.list__item:hover .icon,
+.active .icon {
+    color: #ffffff;
+}
+
+/* Title */
+.title {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translate(0, -50%);
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding: 5px 10px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.title::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 8px solid;
+    border-color: transparent #ffffff transparent transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    transition: all 0.5s;
+}
+
+.list__item:hover .title,
+.active .title {
+    opacity: 1;
+    transform: translate(-30px, -50%);
+}
