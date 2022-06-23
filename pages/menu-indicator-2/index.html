@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Indicate menu items">
+    <meta name="author" content="Ibrahim El-Mokhtar">
+    <meta name="keywords" content="HTML5, CSS3, CSS Effects, Menu Indicator>">
+
+    <title>Menu Indicator</title>
+    <link rel="shortcut icon" href="bars-solid.svg" type="image/x-icon">
+
+    <!-- link to Font Awesome Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <!-- applied stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="app.js" async></script>
+</head>
+<body>
+
+    <!-- Menu -->
+    <div class="container">
+        <ul class="navigation">
+            <!-- Home -->
+            <li class="list__item active">
+                <span class="curves top"></span>
+                <span class="curves bottom"></span>
+                <a href="#">
+                    <i class="fa-solid fa-house icon"></i>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <!-- Profile -->
+            <li class="list__item">
+                <span class="curves top"></span>
+                <span class="curves bottom"></span>
+                <a href="#">
+                    <i class="fa-solid fa-user icon"></i>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <!-- Message -->
+            <li class="list__item">
+                <span class="curves top"></span>
+                <span class="curves bottom"></span>
+                <a href="#">
+                    <i class="fa-solid fa-message icon"></i>
+                    <span class="title">Message</span>
+                </a>
+            </li>
+            <!-- Help -->
+            <li class="list__item">
+                <span class="curves top"></span>
+                <span class="curves bottom"></span>
+                <a href="#">
+                        <i class="fa-solid fa-circle-question icon"></i>
+                    <span class="title">Help</span>
+                </a>
+            </li>
+            <!-- Settings -->
+            <li class="list__item">
+                <span class="curves top"></span>
+                <span class="curves bottom"></span>
+                <a href="#">
+                    <i class="fa-solid fa-gear icon"></i>
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Toggle View Icon -->
+    <div class="toggle__icon">
+        <i class="fa-solid fa-bars open"></i>
+        <i class="fa-solid fa-xmark close"></i>
+    </div>
+
+</body>
+</html>

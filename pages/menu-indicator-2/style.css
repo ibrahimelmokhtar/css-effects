@@ -1,0 +1,181 @@
+/* General Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #ffffff;
+    font-family: sans-serif;
+    transition: all 0.5s;
+}
+
+/* Navigation Container */
+.container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 70px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-sizing: initial;
+    background-color: #4d5bf9;
+    border-left: 5px solid #4d5bf9;
+    transition: width 0.5s;
+}
+
+.container.active {
+    width: 300px;
+}
+
+/* Main Navigation */
+.navigation {
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 0 0 5px;
+}
+
+/* Single List Item */
+.list__item {
+    position: relative;
+    width: 100%;
+}
+
+.list__item:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+/* List Content */
+.list__item a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* List Icon */
+.icon {
+    min-width: 60px;
+    line-height: 2;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+/* List Title */
+.title {
+    padding-left: 10px;
+    font-size: 1.2rem;
+}
+
+/* Active List Item */
+.list__item.active {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 20px 0 0 20px;
+}
+
+.list__item.active a {
+    position: relative;
+    color: #333333;
+}
+
+/* Clear Background To Create Right Curves */
+.curves {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #ffffff;
+    display: none;
+}
+
+.curves.top {
+    top: 0;
+    transform: translate(0, -100%);
+}
+
+.curves.bottom {
+    bottom: 0;
+    transform: translate(0, 100%);
+}
+
+/* Right Curves */
+.curves.top::before,
+.curves.bottom::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #4d5bf9;
+    display: none;
+}
+
+/* Top Curve */
+.curves.top::before {
+    top: 0;
+    border-bottom-right-radius: 20px;
+}
+
+/* Bottom Curve */
+.curves.bottom::before {
+    bottom: 0;
+    border-top-right-radius: 20px;
+}
+
+.list__item.active .curves,
+.list__item.active .curves.top::before,
+.list__item.active .curves.bottom::before {
+    display: block;
+}
+
+/* Toggle View Icon */
+.toggle__icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #4d5bf9;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+/* Active Toggle Icon */
+.toggle__icon.active {
+    background-color: #ff4d89;
+    color: #333333;
+}
+
+/* Open/Close Icons */
+.open {
+    font-size: 1.6rem;
+}
+
+.close {
+    font-size: 2rem;
+}
+
+.toggle__icon .open,
+.toggle__icon.active .close {
+    display: block;
+}
+
+.toggle__icon.active .open,
+.toggle__icon .close {
+    display: none;
+}
