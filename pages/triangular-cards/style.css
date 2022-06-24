@@ -1,0 +1,56 @@
+/* General Rules */
+:root {
+    --width: 500px;
+    --gap: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cards Container */
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: calc(var(--width) + var(--gap));
+    height: calc(var(--width) + var(--gap));
+    gap: var(--gap);
+}
+
+/* Single Card */
+.card {
+    width: calc(var(--width) / 2);
+    height: calc(var(--width) / 2);
+    overflow: hidden;
+    margin: 0 -61px;
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+}
+
+/* Flipped Card */
+.card:nth-child(2) {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Single Image */
+img {
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.card:hover img {
+    transform: scale(1.4);
+}
