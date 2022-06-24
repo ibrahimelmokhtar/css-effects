@@ -1,0 +1,53 @@
+/* General Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #ffffff;
+    font-family: sans-serif;
+}
+
+/* Center Horizontally and Vertically */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Displayed Button */
+.button {
+    padding: 30px 60px;
+    text-align: center;
+    color: #262626;
+    border: 2px solid #262626;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+
+.button:hover {
+    color: #ffffff;
+}
+
+/* Dynamic Background */
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ff003b;
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+.button:hover::before {
+    width: 100%;
+}
