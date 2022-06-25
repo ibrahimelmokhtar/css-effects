@@ -1,0 +1,87 @@
+/* General Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+/* Container Title */
+.title {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+/* Dots Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Y-Axis Container */
+.y-axis-container {
+    background-color: #ffeb3b;
+    color: #333333;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/* X-Axis Container */
+.x-axis-container {
+    background-color: #52e0f3;
+    color: #333333;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/* Single Dot */
+.dot {
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+/* Y-Axis Dots */
+.y-axis {
+    background-color: #cea321;
+    animation: bounce 1.4s linear infinite;
+    animation-delay: calc(-1.4s + (0.2s * var(--i)));
+}
+
+/* X-Axis Dots */
+.x-axis {
+    background-color: #15adc1;
+    animation: vibrate 1.4s linear infinite;
+    animation-delay: calc(-1.4s + (0.2s * var(--i)));
+}
+
+/* Animation */
+@keyframes bounce {
+    0%, 60%, 100% {
+        transform: translate(0, 0);
+    }
+    80% {
+        transform: translate(0, -20px);
+    }
+}
+
+@keyframes vibrate {
+    0%, 60%, 100% {
+        transform: translate(0, 0);
+    }
+    80% {
+        transform: translate(-10px, 0);
+    }
+}
