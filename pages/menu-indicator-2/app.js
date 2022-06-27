@@ -1,37 +1,25 @@
-// remove active class from all list items:
-const removeActive = () => {
-    const listItems = document.querySelectorAll('.list__item');
-    listItems.forEach(element => {
-        if (element.classList.contains('active')) {
-            element.classList.remove('active');
-        }
-    });
-};
+// Wait until the document is ready
+$(document).ready(function () {
+    // handle click events for (.list__item):
+    $('.list__item').click(function (e) {
+        // prevent default action:
+        e.preventDefault();
 
-// wait until DOM is ready:
-document.addEventListener('DOMContentLoaded', () => {
-    // obtain ALL list items:
-    const listItems = document.querySelectorAll('.list__item');
+        // remove active classes:
+        $('.list__item').removeClass('active');
 
-    // click events on list items:
-    listItems.forEach((element, key) => {
-        element.addEventListener('click', (event) => {
-            // remove active classes:
-            removeActive();
-
-            // add active element:
-            element.classList.add('active');
-        });
+        // add active element:
+        $(this).addClass('active');
     });
 
-    // obtain toggle icon:
-    const toggleIcon = document.querySelector('.toggle__icon');
-    // obtain navigation menu:
-    const container = document.querySelector('.container');
+    // handle click events for (.toggle__icon):
+    $('.toggle__icon').click(function (e) {
+        e.preventDefault();
 
-    // click event on toggle icon:
-    toggleIcon.addEventListener('click', () => {
-        toggleIcon.classList.toggle('active');
-        container.classList.toggle('active');
+        // toggle active icon:
+        $(this).toggleClass('active');
+
+        // toggle active container:
+        $('.container').toggleClass('active');
     });
 });

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Indicate menu items">
     <meta name="author" content="Ibrahim El-Mokhtar">
-    <meta name="keywords" content="HTML5, CSS3, CSS Effects, Menu Indicator>">
+    <meta name="keywords" content="HTML5, CSS3, CSS Effects, Menu Indicator">
 
     <title>Menu Indicator</title>
     <link rel="shortcut icon" href="bars-solid.svg" type="image/x-icon">
@@ -17,7 +17,8 @@
     <!-- applied stylesheet -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- used JS scripts -->
+    <!-- used js libraries and scripts -->
+    <script src="../../plugins/jquery-3.6.0.min.js"></script>
     <script src="app.js" async></script>
 </head>
 <body>
@@ -26,35 +27,35 @@
     <div class="center">
         <ul class="navigation">
             <!-- Home -->
-            <li class="list__item" style="color: #f53b57;">
+            <li class="list__item" style="color: #f53b57; --i: 0;">
                 <a href="#">
                     <i class="fa-solid fa-house icon"></i>
                     <span class="title">Home</span>
                 </a>
             </li>
             <!-- Profile -->
-            <li class="list__item" style="color: #3c40c6;">
+            <li class="list__item" style="color: #3c40c6; --i: 1;">
                 <a href="#">
                     <i class="fa-solid fa-user icon"></i>
                     <span class="title">Profile</span>
                 </a>
             </li>
             <!-- Message -->
-            <li class="list__item active" style="color: #05c46b;">
+            <li class="list__item active" style="color: #05c46b; --i: 2;">
                 <a href="#">
                     <i class="fa-solid fa-message icon"></i>
                     <span class="title">Messages</span>
                 </a>
             </li>
             <!-- Help -->
-            <li class="list__item" style="color: #0fbcf9;">
+            <li class="list__item" style="color: #0fbcf9; --i: 3;">
                 <a href="#">
                         <i class="fa-solid fa-circle-question icon"></i>
                     <span class="title">Help</span>
                 </a>
             </li>
             <!-- Settings -->
-            <li class="list__item" style="color: #ffa801;">
+            <li class="list__item" style="color: #ffa801; --i: 4;">
                 <a href="#">
                     <i class="fa-solid fa-gear icon"></i>
                     <span class="title">Settings</span>

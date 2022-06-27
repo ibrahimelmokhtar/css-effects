@@ -1,56 +1,44 @@
-// remove active class from all list items:
-const removeActive = () => {
-    const listItems = document.querySelectorAll('.list__item');
-    listItems.forEach(element => {
-        if (element.classList.contains('active')) {
-            element.classList.remove('active');
-        }
-    });
-};
-
-// wait until DOM is ready:
-document.addEventListener('DOMContentLoaded', () => {
-    // obtain ALL list items:
-    const listItems = document.querySelectorAll('.list__item');
-
-    // obtain indicator element:
-    const indicator = document.querySelector('.indicator');
-
+// Wait until the document is ready
+$(document).ready(function () {
     // obtain --width variable within :root css selector:
-    const width = getComputedStyle(document.body).getPropertyValue('--width');
+    const width = $(this.body).css('--width');
 
-    const color = document.querySelector('.list__item:nth-child(3)').style.color;
-    // change body background color:
-    document.body.style.backgroundColor = color;
+    // obtain the color of the third list item:
+    const color = $('.list__item:nth-child(3)').css('color');
 
-    // change indicator background color:
-    indicator.style.backgroundColor = color;
-    indicator.style.borderColor = color;
+    // change (body) background color:
+    $(this.body).css({
+        backgroundColor: color,
+    });
 
-    // update indicator position:
-    indicator.style.transform = `translate(-50%, calc(${width} * ${2}))`;
+    // change (.indicator) styles:
+    $('.indicator').css({
+        backgroundColor: color,
+        borderColor: color,
+        transform: `translate(-50%, calc(${width} * ${2}))`,
+    });
 
-    // mouseenter events:
-    listItems.forEach((element, key) => {
-        element.addEventListener('mouseenter', (event) => {
-            // remove active classes:
-            removeActive();
+    // handle mouse enter events for (.list__item):
+    $('.list__item').mouseenter(function () {
+        // remove active classes:
+        $('.list__item').removeClass('active');
 
-            // add active element:
-            element.classList.add('active');
+        // add active element:
+        $(this).addClass('active');
 
-            // obtain current color of list item:
-            const color = event.target.style.color;
+        // obtain current color of list item:
+        const color = $(this).css('color');
 
-            // change body background color:
-            document.body.style.backgroundColor = color;
+        // change (body) background color:
+        $(document.body).css({
+            backgroundColor: color,
+        });
 
-            // change indicator background color:
-            indicator.style.backgroundColor = color;
-            indicator.style.borderColor = color;
-
-            // update indicator position:
-            indicator.style.transform = `translate(-50%, calc(${width} * ${key}))`;
+        // change (.indicator) styles:
+        $('.indicator').css({
+            backgroundColor: color,
+            borderColor: color,
+            transform: `translate(-50%, calc(${width} * ${$(this).css('--i')}))`,
         });
     });
 });
