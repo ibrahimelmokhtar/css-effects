@@ -1,0 +1,142 @@
+/* General Rules */
+:root {
+    --delay: 0.2s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #e0f7fa;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+/* Main Note */
+.title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    padding-top: 10px;
+    color: #ff0000;
+}
+
+/* Single Card */
+.card {
+    width: 300px;
+    height: 400px;
+    background-color: #eafdff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    cursor: default;
+}
+
+/* Card Images */
+.card:nth-of-type(1) {
+    background-image: url('image-1.jpg');
+}
+
+.card:nth-of-type(2) {
+    background-image: url('image-2.jpg');
+}
+
+.card:nth-of-type(3) {
+    background-image: url('image-3.jpg');
+}
+
+/* Card Information */
+.info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    transition: 0.5s bottom;
+    transition-delay: calc(5 * var(--delay)); /* Delay Before Hiding */
+}
+
+.card:hover .info {
+    bottom: 0;
+    transition-delay: 0s; /* Start Immediately Upon Hover */
+}
+
+/* Name And Job Title */
+.info .name,
+.info .job-title {
+    color: #ffffff;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translate(0, -100%);
+    transition: 0.5s all;
+    transition-delay: calc(4 * var(--delay));
+}
+
+.info .name {
+    font-size: 18pt;
+    font-weight: 500;
+}
+
+.info .job-title {
+    font-size: 14pt;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.card:hover .info .name,
+.card:hover .info .job-title {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Social Media Container */
+.social {
+    list-style: none;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Social Media Accounts */
+.card .social li {
+    opacity: 0;
+    transform: translate(0, 100%);
+    transition: 0.5s all;
+    transition-delay: calc(var(--delay) * var(--i));
+}
+
+.card:hover .social li {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.social a {
+    color: #ffffff;
+    font-size: 20pt;
+}
