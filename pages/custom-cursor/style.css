@@ -1,0 +1,70 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* General Rules */
+:root {
+    --width: 70px;
+    --elements: 5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    cursor: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation Container */
+.navigation {
+    list-style: none;
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list__item {
+    width: 100%;
+    line-height: 1.6;
+}
+
+.list__item a {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-weight: 200;
+    text-decoration: none;
+    font-size: 3em;
+    color: #ffffff;
+    cursor: none;
+}
+
+/* Custom Cursor - Idle State */
+.cursor {
+    position: absolute;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: 0.1s all;
+}
+
+/* Custom Cursor - Active State */
+.list__item:hover ~ .cursor {
+    transform: translate(-50%, -50%) scale(6);
+}
