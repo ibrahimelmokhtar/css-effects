@@ -1,0 +1,39 @@
+/* xs: for phones */
+@media only screen and (max-width: 768px) {
+    :root {
+        --width: 300px;
+        --height: 350px;
+    }
+
+    body {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: fit-content;
+        padding: 40px 0;
+    }
+
+    .card {
+        margin-bottom: 80px;
+    }
+
+    /* Displayed Information Content */
+    .info .name {
+        font-size: 18pt;
+    }
+
+    .info .description {
+        font-size: 12pt;
+    }
+}
+
+/* sm: for tablets */
+@media only screen and (min-width: 768px) {
+}
+
+/* md: for small laptops */
+@media only screen and (min-width: 992px) {
+}
+
+/* lg: for laptops and desktops */
+@media only screen and (min-width: 1200px) {
+}

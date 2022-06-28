@@ -1,0 +1,23 @@
+/* xs: for phones */
+@media only screen and (max-width: 768px) {
+    :root {
+        --width: 280px;
+    }
+
+    /* Single Card */
+    .card {
+        margin: 0 -35px;
+    }
+}
+
+/* sm: for tablets */
+@media only screen and (min-width: 768px) {
+}
+
+/* md: for small laptops */
+@media only screen and (min-width: 992px) {
+}
+
+/* lg: for laptops and desktops */
+@media only screen and (min-width: 1200px) {
+}

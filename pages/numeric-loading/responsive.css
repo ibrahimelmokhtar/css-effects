@@ -1,0 +1,34 @@
+/* xs: for phones */
+@media only screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    /* Arrow And Loader Container */
+    .main-container {
+        width: 80%;
+    }
+
+    /* Displayed Counter */
+    .count {
+        font-size: 6em;
+    }
+
+    /* Welcome Message */
+    .welcome {
+        font-size: 3em;
+    }
+}
+
+/* sm: for tablets */
+@media only screen and (min-width: 768px) {
+}
+
+/* md: for small laptops */
+@media only screen and (min-width: 992px) {
+}
+
+/* lg: for laptops and desktops */
+@media only screen and (min-width: 1200px) {
+}
