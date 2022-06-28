@@ -1,0 +1,63 @@
+/* General Rules */
+:root {
+    --width: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #0c192c;
+}
+
+/* Bubbles Container */
+.bubbles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Single Bubble */
+.bubbles span {
+    width: var(--width);
+    height: var(--width);
+    border-radius: 50%;
+    margin: 0 -10px;
+    animation: moveUp 10s linear infinite;
+    animation-delay: calc(-100s / var(--i));
+}
+
+/* Odd Bubbles */
+.bubbles span:nth-child(odd) {
+    background-color: #4fc3dc;
+    box-shadow:
+            0 0 0 10px rgba(79, 195, 220, 0.3),
+            0 0 50px 0 #4fc3dc,
+            0 0 100px 0 #4fc3dc;
+}
+
+/* Even Bubbles */
+.bubbles span:nth-child(even) {
+    background-color: #ff2d75;
+    box-shadow:
+            0 0 0 10px rgba(255, 45, 117, 0.3),
+            0 0 50px 0 #ff2d75,
+            0 0 100px 0 #ff2d75;
+}
+
+/* Animation */
+@keyframes moveUp {
+    0% {
+        transform: translate(0, 100vh) scale(0);
+    }
+    100% {
+        transform: translate(0, -10vh) scale(1);
+    }
+}
