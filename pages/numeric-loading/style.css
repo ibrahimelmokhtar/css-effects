@@ -1,0 +1,90 @@
+/* General Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+/* Arrow And Loader Container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 45%;
+    height: 500px;
+}
+
+/* Displayed Arrow */
+.arrow {
+    color: #ff0000;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+/* Each Loader Container */
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid #000000;
+    background-color: #ffffff;
+}
+
+/* Dynamic Background */
+.loader {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: #000000;
+}
+
+.loader.left {
+    left: 0;
+}
+
+.loader.right {
+    right: 0;
+}
+
+/* Displayed Counter */
+.count {
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    font-size: 9em;
+    font-weight: bold;
+    mix-blend-mode: difference;
+}
+
+.count::selection,
+.welcome::selection {
+    background-color: transparent;
+}
+
+/* Welcome Message */
+.welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7em;
+    font-weight: bold;
+    color: #000000;
+    display: none;
+}

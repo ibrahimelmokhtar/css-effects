@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Display numeric loading on screen">
+    <meta name="author" content="Ibrahim El-Mokhtar">
+    <meta name="keywords" content="HTML5, CSS3, CSS Effects, Numeric Loading">
+
+    <title>Numeric Loading</title>
+    <link rel="shortcut icon" href="percent-solid.svg" type="image/x-icon">
+
+    <!-- applied stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- link to Font Awesome Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <!-- used js libraries and scripts -->
+    <script src="../../plugins/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Loader Direction Arrow -->
+    <div class="arrow">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
+    <!-- Single-Side Loader -->
+    <div class="container left-to-right">
+        <div class="welcome">Welcome</div>
+        <div class="loader left"></div>
+        <div class="count"></div>
+    </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Loader Direction Arrow -->
+        <div class="arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <!-- Double-Side Loader -->
+        <div class="container collapse">
+            <div class="welcome">Welcome</div>
+            <div class="loader left"></div>
+            <div class="loader right"></div>
+            <div class="count"></div>
+        </div>
+    </div>
+
+</body>
+</html>
