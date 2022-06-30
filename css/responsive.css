@@ -14,10 +14,15 @@
         margin-bottom: 15px;
     }
 
-    .category h2 {
+    .category .title {
         margin: 0 0 5px;
         padding: 20px 10px;
         font-size: 1.2rem;
+    }
+
+    /* Category Note */
+    .category .note {
+        display: none;
     }
 
     /* Projects Container */

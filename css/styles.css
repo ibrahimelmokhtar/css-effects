@@ -41,7 +41,7 @@ main {
     margin-bottom: 30px;
 }
 
-.category h2 {
+.category .title {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -55,15 +55,22 @@ main {
     transition: all 0.3s ease-in-out;
 }
 
-.category h2:hover {
+.category .title:hover {
     cursor: pointer;
     background-color: #1a1a1a;
     color: #ffffff;
 }
 
-.category h2::selection,
+.category .title::selection,
 .category .counter::selection {
     background-color: transparent;
+}
+
+/* Category Note */
+.category .note {
+    color: #ff0000;
+    font-weight: 400;
+    text-transform: initial;
 }
 
 /* Projects Container */

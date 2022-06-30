@@ -1,0 +1,92 @@
+/* General Rules */
+:root {
+    --border-width: 3px;
+    --gap: 8px;
+    --main-color: #ffff00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #262626;
+    font-family: sans-serif;
+}
+
+/* Center Horizontally and Vertically */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Displayed Button */
+.button {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 24pt;
+    letter-spacing: 5px;
+}
+
+/* Borders */
+.button::before,
+.button::after,
+span::before,
+span::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border: solid var(--main-color);
+    transition: 1s all;
+}
+
+/* Top-Left borders */
+.button::before {
+    top: 0;
+    left: 0;
+    border-width: var(--border-width) 0 0 var(--border-width);
+}
+
+/* Top-Right borders */
+.button::after {
+    top: 0;
+    right: 0;
+    border-width: var(--border-width) var(--border-width) 0 0;
+}
+
+/* Bottom-Left borders */
+span::before {
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 var(--border-width) var(--border-width);
+}
+
+/* Bottom-Right borders */
+span::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 var(--border-width) var(--border-width) 0;
+}
+
+/* Hover Effect */
+.button:hover::before,
+.button:hover::after,
+.button:hover span::before,
+.button:hover span::after {
+    width: calc(50% - var(--gap));
+    height: calc(50% - var(--gap));
+}
