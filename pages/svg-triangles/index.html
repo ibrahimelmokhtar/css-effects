@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Animate custom drawing SVG triangles">
+    <meta name="author" content="Ibrahim El-Mokhtar">
+    <meta name="keywords" content="HTML5, CSS3, CSS Effects, SVG Animation">
+
+    <title>SVG Triangles</title>
+    <!-- <link rel="shortcut icon" href="pen-solid.svg" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="triangles.svg" type="image/x-icon">
+
+    <!-- applied stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- used js libraries and scripts -->
+    <script src="../../plugins/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <!-- Main Title -->
+    <h1>Click to change colors ...</h1>
+
+    <!-- Triangles SVG -->
+    <svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="triangles">
+            <g id="dark__group">
+                <path id="left" d="M352.5 187.01C362.5 192.783 362.5 207.217 352.5 212.99L172.5 316.913C162.5 322.687 150 315.47 150 303.923V96.0769C150 84.5299 162.5 77.3131 172.5 83.0866L352.5 187.01Z"/>
+                <path id="right" d="M502.5 187.01C512.5 192.783 512.5 207.217 502.5 212.99L322.5 316.913C312.5 322.687 300 315.47 300 303.923V96.0769C300 84.5299 312.5 77.3131 322.5 83.0866L502.5 187.01Z"/>
+            </g>
+            <g id="light__group">
+                <path id="center" d="M352.5 187.01C362.5 192.783 362.5 207.217 352.5 212.99L172.5 316.913C162.5 322.687 150 315.47 150 303.923L150 96.0769C150 84.5299 162.5 77.3131 172.5 83.0866L352.5 187.01Z"/>
+            </g>
+        </g>
+    </svg>
+
+</body>
+</html>

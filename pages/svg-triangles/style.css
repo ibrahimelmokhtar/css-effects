@@ -1,0 +1,72 @@
+/* General Rules */
+:root {
+    --dark-color: #635bff;
+    --light-color: #43c4ed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Title */
+h1 {
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+/* Main SVG Container */
+svg {
+    cursor: pointer;
+    width: 400px;
+    height: 200px;
+    border: 3px solid var(--light-color);
+    border-radius: 20px;
+}
+
+/* Set Group Colors */
+#dark__group {
+    fill: var(--dark-color);
+}
+
+#light__group {
+    fill: var(--light-color);
+}
+
+/* Group Elements */
+#left,
+#right,
+#center {
+    fill-opacity: 0.7;
+    transition: all 1s ease;
+}
+
+#left {
+    transform: translate(-100%, 0);
+    opacity: 0;
+}
+
+/* Hover Effects */
+svg:hover #center {
+    transform: translate(24%, 0);
+}
+
+svg:hover #right {
+    transform: translate(36%, 0);
+    opacity: 0;
+}
+
+svg:hover #left {
+    transform: translate(0, 0);
+    opacity: 1;
+}
