@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+/* General Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Hubballi', cursive;
+}
+
+/* SVG Elements */
+#splitted-letters text {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 3;
+    font-size: 128px;
+    stroke-linecap: round;
+    stroke-dasharray: 1000;
+    animation: draw 5s ease-in-out infinite;
+}
+
+/* Animation */
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
