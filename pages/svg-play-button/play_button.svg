@@ -1,0 +1,7 @@
+<!-- Custom SVG File Created Using Figma -->
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="play_button">
+        <circle id="circle" cx="300" cy="200" r="175" fill="white" stroke="black" stroke-width="10" stroke-linejoin="round"/>
+        <path id="triangle" d="M435 191.34C441.667 195.189 441.667 204.811 435 208.66L240 321.244C233.333 325.093 225 320.281 225 312.583L225 87.4167C225 79.7187 233.333 74.9074 240 78.7564L435 191.34Z" fill="white" stroke="black" stroke-width="10" stroke-linejoin="round"/>
+    </g>
+</svg>

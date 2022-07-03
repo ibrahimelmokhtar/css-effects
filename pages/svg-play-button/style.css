@@ -1,0 +1,36 @@
+/* General Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0e68c;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SVG Elements */
+#circle,
+#triangle {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 10px;
+    stroke-linecap: round;
+    stroke-dasharray: 1100;
+    animation: draw 5s ease-in-out infinite;
+}
+
+/* Animation */
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 1100;
+    }
+    80%, 100% {
+        stroke-dashoffset: 0;
+    }
+}
